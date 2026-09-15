@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import MapView from './MapView.jsx'
 import { normalizeResults, PARTY_COLORS } from './lib/results.js'
 
 const REFRESH_MS = 30_000
@@ -64,16 +65,10 @@ export default function App() {
 
       <section className="dashboard">
         <div className="map-card">
-          <div className="map-placeholder">
-            <div className="map-placeholder-inner">
-              <span className="map-kicker">POLL MAP</span>
-              <h2>2026 voting-area geometry validation in progress</h2>
-              <p>The 2023 Calgary-Shaw map has 66 ordinary voting areas. Tonight's by-election feed has 68, so old polygons are not being presented as current boundaries.</p>
-              <div className="legend-row">
-                {Object.entries(PARTY_COLORS).map(([party, color]) => <span key={party}><i style={{ background: color }} />{party}</span>)}
-                <span><i className="unreported" />Unreported</span>
-              </div>
-            </div>
+          <MapView polls={results?.votingDay ?? []} />
+          <div className="legend-row map-legend">
+            {Object.entries(PARTY_COLORS).map(([party, color]) => <span key={party}><i style={{ background: color }} />{party}</span>)}
+            <span><i className="unreported" />Unreported</span>
           </div>
         </div>
 
