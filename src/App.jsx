@@ -52,8 +52,7 @@ export default function App() {
     <main className="app-shell">
       <header className="site-header">
         <a className="brand" href="https://claytonsmith.ca" target="_blank" rel="noreferrer">
-          <span className="brand-mark">CS</span>
-          <span><strong>Clayton Smith</strong><small>GeoIntelligence · Land Strategy · AI</small></span>
+          <img className="brand-logo" src="https://claytonsmith.ca/assets/images/cs_logo_transparent.webp" alt="Clayton Smith" />
         </a>
         <a className="geointel-link" href="https://geointel.claytonsmith.ca" target="_blank" rel="noreferrer">GeoIntel ↗</a>
       </header>
